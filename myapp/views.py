@@ -159,18 +159,21 @@ def register(request):
 
 def login_view(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user = authenticate(request, username=username, password=password)
 
+        next_url = request.GET.get('next')
+
         if user:
             login(request, user)
-            return redirect('home')
+            return redirect(next_url if next_url else 'home')
         else:
             messages.error(request, "Invalid credentials")
 
     return render(request, "auth/login.html")
+
 
 
 def logout_view(request):
