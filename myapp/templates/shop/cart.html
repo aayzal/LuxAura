@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Cart</h2>
+
+{% for item in items %}
+<div style="margin-bottom:20px; border-bottom:1px solid #ccc;">
+    <h3>{{ item.perfume.name }}</h3>
+    <p>Price: ₹{{ item.perfume.price }}</p>
+
+    <form action="{% url 'update_cart' item.id %}" method="POST">
+        {% csrf_token %}
+        <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+        <button type="submit">Update</button>
+    </form>
+
+    <p>Total: ₹{{ item.total_price }}</p>
+
+    <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+</div>
+{% endfor %}
+
+<h3>Grand Total: ₹{{ total }}</h3>
+
+<a href="{% url 'checkout' %}">
+    <button>Proceed to Checkout</button>
+</a>
+
+
+{% endblock %}

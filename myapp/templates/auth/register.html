@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="
+    min-height: calc(100vh - 140px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+">
+
+    <div style="
+        width:420px;
+        background:rgba(255,255,255,0.06);
+        padding:40px;
+        border-radius:20px;
+    ">
+
+        <h2 style="text-align:center; color:#f7c873;">Register</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red; text-align:center;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username" required style="width:100%; padding:10px; margin:10px 0;">
+            <input type="email" name="email" placeholder="Email" required style="width:100%; padding:10px; margin:10px 0;">
+            <input type="password" name="password" placeholder="Password" required style="width:100%; padding:10px; margin:10px 0;">
+            <input type="password" name="confirm" placeholder="Confirm Password" required style="width:100%; padding:10px; margin:10px 0;">
+
+            <button style="
+                width:100%;
+                padding:12px;
+                background:#f7c873;
+                border:none;
+                margin-top:10px;
+            ">
+                Register
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

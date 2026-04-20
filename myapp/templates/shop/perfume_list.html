@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ===== GLOBAL ===== */
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== TITLE ===== */
+.title {
+    text-align: center;
+    font-size: clamp(26px, 5vw, 40px);
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #f7c873;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 280px;
+    max-width: 90%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background: #f7c873;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===== IMAGE ===== */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ===== TEXT ===== */
+.card h3 {
+    font-size: clamp(16px, 2.5vw, 20px);
+    margin: 10px 0;
+}
+
+.price {
+    color: #f7c873;
+    font-size: 16px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin-top: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.view-btn {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.cart-btn {
+    background: #f7c873;
+    color: #000;
+}
+
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 600px) {
+
+    .card img {
+        height: 160px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}
+
+</style>
+
+
+<div class="container">
+
+    <h1 class="title">Luxury Collection ✨</h1>
+
+    <!-- SEARCH -->
+    <form method="GET" class="search-box">
+        <input type="text" name="q" placeholder="Search fragrances..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- GRID -->
+    <div class="grid">
+
+        {% for perfume in perfumes %}
+        <div class="card">
+
+            <img src="{{ perfume.image }}">
+
+            <h3>{{ perfume.name }}</h3>
+            <p class="price">₹{{ perfume.price }}</p>
+
+            <a href="{% url 'perfume_detail' perfume.id %}" class="btn view-btn">
+                View
+            </a>
+
+            <a href="{% url 'add_to_cart' perfume.id %}" class="btn cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

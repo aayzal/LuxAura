@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section style="height:100vh; display:flex; align-items:center; justify-content:center;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539') center/cover no-repeat;">
+
+    <div style="text-align:center;">
+        <h2 style="font-family:'Playfair Display'; font-size:60px; margin-bottom:20px;">
+            Luxury That Lingers
+        </h2>
+
+        <p style="font-size:18px; margin-bottom:30px;">
+            Discover fragrances that define elegance and mystery.
+        </p>
+
+        <a href="{% url 'perfume' %}" style="
+            padding:14px 35px;
+            background:#f7c873;
+            color:#000;
+            border-radius:30px;
+            text-decoration:none;
+            font-weight:500;">
+            Explore Collection
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

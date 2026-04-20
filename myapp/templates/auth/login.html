@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.login-wrapper {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 420px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+    padding: 45px 40px;
+    border-radius: 28px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+}
+
+.brand {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #f7c873;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #f7c873, #e6b45c);
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.error {
+    text-align: center;
+    color: #ff7b7b;
+    margin-bottom: 12px;
+}
+
+.extra {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 14px;
+}
+</style>
+
+<div class="login-wrapper">
+    <div class="login-box">
+
+        <div class="brand">LuxAura</div>
+        <p class="subtitle">Sign in to your fragrance world</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="error">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        <div class="extra">
+            Don’t have an account?
+            <a href="{% url 'register' %}">Create one</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

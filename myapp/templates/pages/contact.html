@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="max-width:500px; margin:80px auto;">
+
+    <h2 style="text-align:center;">Contact Us</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:lightgreen; text-align:center;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
+        <textarea name="message" placeholder="Your Message" required style="width:100%; padding:10px;"></textarea>
+
+        <button style="width:100%; padding:12px; background:#f7c873; border:none; margin-top:10px;">
+            Send
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}

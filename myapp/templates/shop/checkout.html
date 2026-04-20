@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>Checkout</h2>
+
+    {% for item in items %}
+        <div>
+            <p>{{ item.perfume.name }} × {{ item.quantity }}</p>
+            <p>₹ {{ item.total_price }}</p>
+        </div>
+    {% endfor %}
+
+    <h3>Total: ₹ {{ total }}</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+
+{% endblock %}

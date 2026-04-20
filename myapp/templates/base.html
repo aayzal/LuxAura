@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LuxAura</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:#0f0f0f;
+            color:#fff;
+        }
+
+        main {
+            padding-top: 90px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            color: #777;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include "components/navbar.html" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "components/footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.dashboard {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    color: #fff;
+}
+
+/* Heading */
+.dashboard h1 {
+    font-size: clamp(24px, 5vw, 32px);
+}
+
+.dashboard p {
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.card h2 {
+    font-size: clamp(20px, 4vw, 28px);
+    color: #f7c873;
+}
+
+/* Hover only for desktop */
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Sections */
+.section {
+    margin-top: 40px;
+}
+
+.section h2 {
+    font-size: clamp(18px, 4vw, 24px);
+}
+
+/* Links */
+.section a {
+    display: inline-block;
+    margin: 8px 0;
+    color: #f7c873;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 20px 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+
+
+<div class="container">
+
+    <h2 class="title">Welcome, {{ user.username }} 👋</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Cart Items</h3>
+            <p class="value">{{ cart_items_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Cart Value</h3>
+            <p class="value">₹{{ cart_total }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <p class="value">{{ total_orders }}</p>
+        </div>
+
+    </div>
+
+    <a href="{% url 'cart' %}" class="btn">View Cart</a>
+    <a href="{% url 'orders' %}" class="btn">My Orders</a>
+
+</div>
+
+{% endblock %}
