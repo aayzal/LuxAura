@@ -17,7 +17,20 @@ A full-stack e-commerce web application built using Django with modern UI and co
 - Database: SQLite
 
 ## 📸 Screenshots
-(Add screenshots here)
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](screenshots/home.jpeg)
+
+### 🛍 Perfume Page
+![Perfume](screenshots/perfume.jpeg)
+
+### 🛒 Cart Page
+![Cart](screenshots/cart.jpeg)
+
+### 📊 Dashboard
+![Dashboard](screenshots/dashboard.jpeg)
+
 
 ## 🚀 How to Run
 1. Clone the repository
