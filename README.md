@@ -1,43 +1,78 @@
-# LuxAura - Perfume E-commerce Website
+# ✨ LuxAura – Perfume E-commerce Website
 
-A full-stack e-commerce web application built using Django with modern UI and core shopping features.
+A full-stack e-commerce web application built using Django with modern UI and real shopping features.
+
+---
+
+## 🚀 Live Demo
+👉 https://luxaura.onrender.com
+
+---
 
 ## ✨ Features
-- User Authentication (Register/Login/Logout)
+
+- User Authentication (Register / Login / Logout)
 - Product Listing & Detail Pages
 - Search Functionality
 - Add to Cart System
 - Checkout & Order Management
 - Contact Form with Email Integration
-- Responsive UI Design
+- Responsive Luxury UI Design
 
-## 🛠 Tech Stack
+---
+
+## 🛠️ Tech Stack
+
 - Backend: Django (Python)
 - Frontend: HTML, CSS, JavaScript
 - Database: SQLite
 
+---
+
+
+
+
 ## 📸 Screenshots
-## 📸 Screenshots
 
-### 🏠 Home Page
-![Home](screenshots/home.jpeg)
+### 🏠 Home | 🛍️ Perfume
+<p align="center">
+  <img src="screenshots/home.png" width="45%" />
+  <img src="screenshots/perfume.png" width="45%" />
+</p>
 
-### 🛍 Perfume Page
-![Perfume](screenshots/perfume.jpeg)
-
-### 🛒 Cart Page
-![Cart](screenshots/cart.jpeg)
-
-### 📊 Dashboard
-![Dashboard](screenshots/dashboard.jpeg)
+### 🛒 Cart | 📊 Dashboard
+<p align="center">
+  <img src="screenshots/cart.png" width="45%" />
+  <img src="screenshots/dashboard.png" width="45%" />
+</p>
 
 
-## 🚀 How to Run
-1. Clone the repository
-2. Run: python manage.py runserver
-3. Open http://127.0.0.1:8000/
+### 🏠 Home | 🛍️ Perfume
+<p align="center">
+  <img src="screenshots/home.png" width="45%" />
+  <img src="screenshots/perfume.png" width="45%" />
+</p>
+
+### 🛒 Cart | 📊 Dashboard
+<p align="center">
+  <img src="screenshots/cart.png" width="45%" />
+  <img src="screenshots/dashboard.png" width="45%" />
+</p>
+
+---
+
+## ⚙️ How to Run Locally
+
+1. Clone the repo  
+2. Install dependencies  
+
+
+---
 
 ## 🔮 Future Improvements
+
 - Payment Gateway Integration
-- Admin Dashboard Improvements
+- Admin Dashboard Enhancements
 - Product Reviews & Ratings
+
+---
