@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-xce1l%x@+jj!@!cq9+z&bau*7j&w(bykb%rn&&eklp@^87l=jy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['luxaura.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
